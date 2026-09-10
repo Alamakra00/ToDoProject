@@ -79,3 +79,14 @@ body {
   border-radius: 20px;
   margin: 10px;
 }
+
+.createTodo {
+  position: fixed;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  z-index: 1000;
+}
