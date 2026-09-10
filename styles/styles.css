@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.headerText {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.headerText > h3 {
+  font-weight: lighter;
+}
+
+.interactiveParts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchBar {
+  width: 396px;
+  height: 48px;
+  background-color: #d3d3d3;
+  color: #999;
+  border-radius: 50px;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.buttonBar {
+  display: flex;
+  width: fit-content;
+  border: 1px solid #999;
+  border-radius: 999px;
+  overflow: hidden;
+  width: 396px;
+}
+
+.buttonBar button {
+  padding: 16px 32px;
+  border: none;
+  border-right: 1px solid #999;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  color: #1e1e1e;
+}
+
+.buttonBar .right {
+  border-right: none;
+}
+
+.buttonBar button.active {
+  background-color: #e4defb;
+}
+.toDoList {
+  margin-top: 20px;
+}
+.toDoList > li {
+  display: flex;
+
+  align-items: center;
+  padding: 5px;
+  width: 396px;
+  height: 62px;
+  background-color: #d3d3d3;
+  border-radius: 20px;
+  margin: 10px;
+}
