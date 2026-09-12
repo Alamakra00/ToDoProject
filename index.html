@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ToDo List</title>
     <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="headerText">
-      <h3 class="dayOfDWeek">day</h3>
-      <p class="date">date</p>
+      <h3 class="dayOfDWeek">День</h3>
+      <p class="date">Дата</p>
     </div>
     <div class="interactiveParts">
       <input type="text" id="searchBar" placeholder="Поиск" />
@@ -21,68 +27,43 @@
       </div>
     </div>
     <div class="mainPage">
-      <ul class="toDoList">
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="active" id="checkbox" />
-
-          <div>
-            <p class="timeOfCheck">time</p>
-            <p class="toDo">Bomboclat</p>
-          </div>
-        </li>
-      </ul>
+      <ul class="toDoList" id="toDoList"></ul>
     </div>
     <button class="createTodo">
       <img src="/assets/images/icon.svg" alt="" />
     </button>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="modal" id="modal">
+      <div class="modal-handle"></div>
+
+      <input
+        type="text"
+        class="modal-input"
+        id="descriptionInput"
+        placeholder="Описание"
+      />
+      <input
+        type="datetime-local"
+        class="modal-input"
+        id="dateInput"
+        placeholder="Дата"
+      />
+
+      <div class="modal-toggle-row">
+        <span>Напомнить мне</span>
+        <label class="switch">
+          <input type="checkbox" id="reminderToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="modal-buttons">
+        <button class="btn-add" id="addBtn">Добавить</button>
+        <button class="btn-cancel" id="cancelBtn">Отмена</button>
+      </div>
+    </div>
+
     <script src="/scripts/script.js"></script>
   </body>
 </html>
