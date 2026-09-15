@@ -51,13 +51,15 @@ function createTaskElement(task) {
   li.innerHTML = `
     <input type="checkbox" class="checkbox" ${task.done ? 'checked' : ''} />
     <div class="textInLi">
+    <div>
       <p class="timeOfCheck" style="${
         task.done ? 'text-decoration: line-through; opacity: 0.7;' : ''
       }">${task.timeText}</p>
       <p class="toDo" style="${
         task.done ? 'text-decoration: line-through; opacity: 0.7;' : ''
       }">${task.text}</p>
-      <button class="delete-button">Delete</button>
+      </div>
+      <button class="delete-button"><img src="/assets/icons/trash3.svg"></button>
     </div>
   `;
 
@@ -190,30 +192,25 @@ const allBtn = document.querySelector('.allBtn');
 const activeBtn = document.querySelector('.activeBtn');
 const finishedBtn = document.querySelector('.finishedBtn');
 
-// Function to clear the current task list in the DOM
 function clearTaskList() {
   toDoList.innerHTML = '';
 }
 
-// Function to render tasks based on a filtered list
 function renderTasks(filteredTasks) {
   clearTaskList();
   filteredTasks.forEach((task) => createTaskElement(task));
 }
 
-// Event listener for "All Tasks" button
 allBtn.addEventListener('click', () => {
-  renderTasks(tasks); // Render all tasks
+  renderTasks(tasks);
 });
 
-// Event listener for "Active Tasks" button
 activeBtn.addEventListener('click', () => {
-  const activeTasks = tasks.filter((task) => !task.done); // Filter active tasks
+  const activeTasks = tasks.filter((task) => !task.done);
   renderTasks(activeTasks);
 });
 
-// Event listener for "Finished Tasks" button
 finishedBtn.addEventListener('click', () => {
-  const finishedTasks = tasks.filter((task) => task.done); // Filter finished tasks
+  const finishedTasks = tasks.filter((task) => task.done);
   renderTasks(finishedTasks);
 });
