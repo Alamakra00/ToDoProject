@@ -1,0 +1,19 @@
+@use '../vars/colors' as *;
+
+.textInLi {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+}
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  background-color: $color-primary;
+  color: $color-primary-dark;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

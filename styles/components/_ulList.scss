@@ -1,0 +1,29 @@
+@use '../vars/colors' as *;
+
+.toDoList {
+  margin-top: 20px;
+
+  > li {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 396px;
+    height: 62px;
+    background-color: $color-list-bg;
+    border-radius: 15px;
+    margin: 10px;
+    font-weight: 100;
+
+    > .checkbox {
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+      accent-color: $color-primary;
+    }
+
+    > .textInLi > div {
+      margin-left: 10px;
+    }
+  }
+}
