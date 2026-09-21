@@ -62,6 +62,7 @@ function createTaskElement(task) {
       <button class="delete-button"><img src="/assets/icons/trash3.svg"></button>
     </div>
   `;
+  console.log(task);
 
   const checkbox = li.querySelector('.checkbox');
   const timeOfCheck = li.querySelector('.timeOfCheck');
@@ -213,4 +214,23 @@ activeBtn.addEventListener('click', () => {
 finishedBtn.addEventListener('click', () => {
   const finishedTasks = tasks.filter((task) => task.done);
   renderTasks(finishedTasks);
+});
+
+// реализация строки поиска
+
+const searchInput = document.getElementById('searchBar');
+
+searchInput.addEventListener('input', () => {
+  const searchText = searchInput.value.trim().toLowerCase();
+
+  if (searchText === '') {
+    renderTasks(tasks); //
+    return;
+  }
+
+  const filteredTasks = tasks.filter((task) =>
+    task.text.toLowerCase().includes(searchText)
+  );
+
+  renderTasks(filteredTasks);
 });
